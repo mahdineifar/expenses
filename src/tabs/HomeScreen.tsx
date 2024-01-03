@@ -1,10 +1,19 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { useTranslation } from "react-i18next";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 export const HomeScreen = () => {
+  const { t, i18n } = useTranslation();
+
   return (
     <View style={styles.container}>
-      <Text>Home!</Text>
+      <Text>Changer la langue</Text>
+      <Pressable
+        accessibilityRole="button"
+        onPress={() => i18n.changeLanguage("fr")}
+      >
+        <Text>{t("homeText")}</Text>
+      </Pressable>
     </View>
   );
 };

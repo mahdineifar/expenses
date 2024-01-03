@@ -1,8 +1,15 @@
 import * as React from "react";
-import { MainTabsNavigator } from "./src/tabs/MainTabsNavigator";
+import { NavigationContainer } from "@react-navigation/native";
+import { DrawerNavigator } from "./src/DrawerNavigator";
+
+import "./src/i18n/i18n.config";
 
 const App = () => {
-  return <MainTabsNavigator />;
+  return (
+    <NavigationContainer>
+      <DrawerNavigator />
+    </NavigationContainer>
+  );
 };
 
 export default App;
