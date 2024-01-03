@@ -1,15 +1,11 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import fr from "./translations/fr.json";
-import en from "./translations/en.json";
+import fr from "./translations/fr";
+import en from "./translations/en";
 
 const resources = {
-  en: {
-    translation: en,
-  },
-  fr: {
-    translation: fr,
-  },
+  en,
+  fr,
 };
 
 const i18nInstance = async () => {

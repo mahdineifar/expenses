@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
 export const HomeScreen = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation("home");
 
   return (
     <View style={styles.container}>

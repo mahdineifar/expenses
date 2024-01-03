@@ -10,7 +10,7 @@ import { DataScreen } from "./DataScreen";
 const Tab = createBottomTabNavigator();
 
 export const MainTabsNavigator = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
 
   return (
     <Tab.Navigator

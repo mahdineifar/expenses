@@ -9,7 +9,7 @@ import { DRAWER_MAIN_SCREEN, SETTINGS_SCREEN } from "./constants/routes";
 const Drawer = createDrawerNavigator();
 
 export const DrawerNavigator = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
 
   return (
     <Drawer.Navigator
