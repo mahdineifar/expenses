@@ -1,10 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+import { DefaultText } from "../shared/DefaultText";
 
 export const DataScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>Settings!</Text>
+      <DefaultText>Settings!</DefaultText>
     </View>
   );
 };
