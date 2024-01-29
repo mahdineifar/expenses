@@ -1,10 +1,10 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { MainTabsNavigator } from "./tabs/MainTabsNavigator";
-import { SettingsScreen } from "./screens/SettingsScreen";
-import { HeaderMenuComponent } from "./components/HeaderMenuComponent";
-import { DRAWER_MAIN_SCREEN, SETTINGS_SCREEN } from "./constants/routes";
+import { SettingsScreen } from "../screens/SettingsScreen";
+import { HeaderMenuComponent } from "../components/HeaderMenuComponent";
+import { DRAWER_MAIN_SCREEN, SETTINGS_SCREEN } from "../constants/routes";
+import { MainTabsNavigator } from "./MainTabsNavigator";
 
 const Drawer = createDrawerNavigator();
 
