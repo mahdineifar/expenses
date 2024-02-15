@@ -1,25 +1,17 @@
-import React, { useEffect } from "react";
-import { View } from "react-native";
+import React from "react";
+import { useQuery } from "@tanstack/react-query";
 import { DefaultText } from "../shared/DefaultText";
-import { db } from "../sqlite/DrizzleDB";
-import { accounts } from "../../db/schema";
+import { getAccounts } from "../sqlite/requests/accounts";
+import { ScreenContainerWithAddIcon } from "./ScreenContainerWithAddIcon";
 
 export const AccountsScreen = () => {
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await db.select().from(accounts);
-      console.log("result");
-      console.log(result);
-      return result;
-    };
-    fetchData()
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-  }, []);
+  const query = useQuery({ queryKey: ["accounts"], queryFn: getAccounts });
+
+  console.log(query.data);
 
   return (
-    <View>
-      <DefaultText>Settings!</DefaultText>
-    </View>
+    <ScreenContainerWithAddIcon>
+      <DefaultText>Accounts!</DefaultText>
+    </ScreenContainerWithAddIcon>
   );
 };

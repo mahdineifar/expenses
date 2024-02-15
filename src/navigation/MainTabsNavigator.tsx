@@ -7,7 +7,7 @@ import { HeaderMenuComponent } from "../components/HeaderMenuComponent";
 import { ACCOUNTS_SCREEN_TAB, HOME_SCREEN_TAB } from "../constants/routes";
 import { HomeScreen } from "../screens/HomeScreen";
 import { DataScreen } from "../screens/DataScreen";
-import { AccountsScreen } from "../screens/AccountsScreen";
+import { AccountsStackScreen } from "./AccountsStackScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -27,10 +27,10 @@ export const MainTabsNavigator = () => {
           tabBarIcon: () => (
             <AntDesign name="wallet" size={24} color={colors.primary} />
           ),
-          headerTitle: t("accountsHeader"),
+          headerShown: false,
         }}
         name={ACCOUNTS_SCREEN_TAB}
-        component={AccountsScreen}
+        component={AccountsStackScreen}
       />
       <Tab.Screen
         options={{

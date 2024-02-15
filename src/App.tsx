@@ -7,6 +7,7 @@ import {
   ToastPosition,
   ToastProvider,
 } from "react-native-toast-animated";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import migrations from "../db/outputs/migrations";
 import { DrawerNavigator } from "./navigation/DrawerNavigator";
 import { DarkTheme } from "./shared/DarkTheme";
@@ -18,14 +19,18 @@ const config: ConfigType = {
   position: ToastPosition.TOP,
 };
 
+const queryClient = new QueryClient();
+
 const App = () => {
   useMigrations(db, migrations);
 
   return (
     <NavigationContainer theme={DarkTheme}>
-      <ToastProvider config={config}>
-        <DrawerNavigator />
-      </ToastProvider>
+      <QueryClientProvider client={queryClient}>
+        <ToastProvider config={config}>
+          <DrawerNavigator />
+        </ToastProvider>
+      </QueryClientProvider>
     </NavigationContainer>
   );
 };
